@@ -1,5 +1,0 @@
-run this command from your respective board subdirectory:
-
-make fpga-images-with-ila-$(BOARD)/boot.bin CONFIG=$(CONFIG) DEBUGNET0=first_net_to_debug [DEBUGNET1=second_net_to_debug] [DEBUGNET2=third_net_to_debug] [DEBUGNET3=fourth_net_to_debug]
-
-the output will be in the fpga-images-$(BOARD) subdirectory. The files can be copied directly to the sd card and the board can be booted directly from there.

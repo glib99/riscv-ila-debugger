@@ -1,0 +1,24 @@
+This repository has a makefile modified with a rule to create a rocket sd card image
+with a debug core instantiated and connected to the user specified nets.
+
+The repository structure is modeled after the rocket fpga-zynq directory; you can copy
+the makefile/makefrag into their respective locations in your cloned repo and follow
+the instructions.
+
+run this command from your respective board subdirectory:
+
+make fpga-images-with-ila-$(BOARD)/boot.bin CONFIG=$(CONFIG) DEBUGNET0=first_net_to_debug [DEBUGNET1=second_net_to_debug] [DEBUGNET2=third_net_to_debug] [DEBUGNET3=fourth_net_to_debug]
+
+Up to 4 debug nets are supported with this makefile, on one debug core.
+More can be added if needed.
+the output will be in the fpga-images-$(BOARD) subdirectory. 
+The files can be copied directly to the sd card and the board can be booted directly from there.
+
+A modified makefile for the zedboard has been created in the zedboard subdirectory.
+If you would like to use this makefile with another board, add the following to 
+the respective makefile in the same way:
+
+DEBUGNET0 ?= 
+DEBUGNET1 ?= NoDebugNet1
+DEBUGNET2 ?= NoDebugNet2
+DEBUGNET3 ?= NoDebugNet3
