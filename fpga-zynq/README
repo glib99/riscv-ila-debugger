@@ -1,7 +1,7 @@
 This repository has a makefile modified with a rule to create a rocket sd card image
 with a debug core instantiated and connected to the user specified nets.
 
-The repository structure is modeled after the rocket fpga-zynq directory; you can copy
+The repository structure is copied from the rocket fpga-zynq directory; you can copy
 the makefile/makefrag into their respective locations in your cloned repo and follow
 the instructions.
 
